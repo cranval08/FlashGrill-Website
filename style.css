@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+:root {
+    --dark-yellow: #ba8e23;
+    --yellow: #fbbc05;
+    --brown: #a52a2a;
+    --red: #ea4335;
+    --dark-brown: #1a110c;
+    --gray: #667085;
+    --light-gray: #f6f8fc;
+    --white: #ffffff;
+}
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3 {
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    text-align: center;
+}
+
+h1 span {
+    color: var(--brown);
+}
+
+h2 {
+    color: var(--light-grey);
+    font-size: 42px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    color: var(--light-gray);
+    font-size: 20px;
+    text-align: center;
+    padding-top: 2px;
+}
+
+/* BODY */
+body {
+    background-color: var(--dark-brown);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-yellow);
+}
+
+/* HEADER */
+header {
+    font-size: 24px;
+    background-color: var(--white);
+}
+
+.navbar {
+    max-width: 100%;
+    margin: auto;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--brown);
+    padding: 2px 8px;
+}
+
+.logo-change {
+    color: var(--dark-yellow);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--brown);
+    padding: 2px 8px;
+}
+
+nav a:hover {
+    color: var(--red);
+}
+
+.navbar div a {
+    text-decoration: none;
+    color: var(--dark-brown);
+    padding: 2px 8px;  
+}
+
+.navbar div a:hover {
+    color: var(--red);
+}
+
+/* MAIN */
+.hero-card {
+    text-align: center;
+}
+
+.hero-card h2 {
+    color: var(--white);
+}
+
+.hero-product {
+    border: solid 1px var(--light-gray);
+    border-radius: 10%;
+    box-shadow: 5px 10px 100px var(--brown);
+}
+
+.button {
+    font-size: 32px;
+    margin-top: 32px;
+    margin-bottom: 48px;
+    text-align: center;
+    color: var(--white);
+}
+
+.menu-button {
+    text-decoration: none;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--yellow), var(--red));
+    border-radius: 10px;
+    border: transparent;
+}
+
+.menu-button:hover {
+    background: transparent;
+    color: yellow;
+    border: solid var(--yellow);
+    border-radius: 10px;
+}
+
+.products {
+    background: var(--light-gray);
+}
+
+.section-header {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.section-label {
+    font-size: 32px;
+    color: var(--brown);
+    letter-spacing: 2px;
+}
+
+.section-header p{
+    font-size: 16px;
+    color:var(--dark-brown);
+}
+
+.toolbar {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 14px;
+    margin: -25px 0 25px;
+    padding: 18px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 12px 35px rgba(6,27,73,.12);
+}
+
+input, select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dbe3f0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: white;
+}
+
+.product-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.product-card {
+    background: var(--white);
+    border: solid 1px var(--gray);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 5px 10px 25px var(--gray);
+    transition: 0.3s;
+    margin-bottom: 32px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 10px 25px var(--brown);
+}
+
+.product-image {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+}
+
+.product-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.product-content {
+    padding: 24px;
+}
+
+.product-content h3 {
+    color: var(--dark-brown);
+    margin: 6px 0;
+}
+
+.product-content h4 {
+    color: var(--dark-brown);
+    margin: 4px 0;
+}
+
+.empty-state {
+    font-size: 64px;
+    color: var(--dark-brown);
+} 
+
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    header {
+        font-size: 100%;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .product-card {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .toolbar, .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
